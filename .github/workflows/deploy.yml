@@ -43,17 +43,12 @@ jobs:
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          # Automatically inject basePath in your Next.js config file and disable 
-          # server side image optimization (if you're using the default runtime).
-          # See https://github.com/actions/configure-pages#automatic-injection-of-basename
-          static_site_generator: next
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the entire .next folder
-          path: '.next'
+          # Upload the out directory which contains the static export
+          path: 'out'
           
       - name: Deploy to GitHub Pages
         id: deployment
